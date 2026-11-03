@@ -49,28 +49,7 @@ a:hover { color: var(--accent); }
 .project-map figcaption { color: var(--muted); font-size: 12px; margin-top: 9px; }
 .project-description .project-text { margin: -4px 0 0; font-size: 17px; line-height: 1.72; }
 .past-section { margin-top: 25px; }
-.past-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.past-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  border-radius: 7px;
-}
-
-.past-card figcaption {
-  font-size: 12px;
-  line-height: 1.5;
-  margin-top: 10px;
-}
+.past-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 860px; margin: 0 auto; align-items: start; }
 .past-card { margin: 0; min-width: 0; }
 .past-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border-radius: 7px; box-shadow: 0 8px 20px rgba(63,46,34,.1); }
 .past-card figcaption { font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 12px; }
@@ -97,3 +76,39 @@ a:hover { color: var(--accent); }
   .footer { flex-wrap: wrap; gap: 10px; }
 }
 @media (max-width: 480px) { .past-grid { grid-template-columns: 1fr; } }
+
+/* Past Projects photo gallery: three compact, equal-width cards on desktop. */
+#research .past-section .past-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 860px;
+  gap: 20px;
+  margin: 0 auto;
+  align-items: start;
+}
+#research .past-section .past-card {
+  display: block;
+  margin: 0;
+  min-width: 0;
+  width: 100%;
+}
+#research .past-section .past-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 7px;
+}
+#research .past-section .past-card figcaption {
+  display: block;
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+@media (max-width: 700px) {
+  #research .past-section .past-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  #research .past-section .past-grid { grid-template-columns: 1fr; max-width: 340px; }
+}
