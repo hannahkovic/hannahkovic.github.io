@@ -49,7 +49,28 @@ a:hover { color: var(--accent); }
 .project-map figcaption { color: var(--muted); font-size: 12px; margin-top: 9px; }
 .project-description .project-text { margin: -4px 0 0; font-size: 17px; line-height: 1.72; }
 .past-section { margin-top: 25px; }
-.past-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.past-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.past-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 7px;
+}
+
+.past-card figcaption {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
 .past-card { margin: 0; min-width: 0; }
 .past-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border-radius: 7px; box-shadow: 0 8px 20px rgba(63,46,34,.1); }
 .past-card figcaption { font-size: 13px; line-height: 1.55; color: var(--muted); margin-top: 12px; }
